@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Harshit-Frontend Developer</title>
+  <style>
+    :root{
+      --bg:#f6f8fb; --card:#fff; --accent:#2563eb; --muted:#666;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    body{margin:0;background:var(--bg);color:#111;}
+    header{background:var(--accent);color:#fff;padding:1.25rem 1rem;}
+    .container{max-width:900px;margin:1.25rem auto;padding:1rem;}
+    .profile{display:flex;gap:1rem;align-items:center;background:var(--card);padding:1rem;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+    figure{margin:0;flex:0 0 120px;}
+    img{width:120px;height:120px;border-radius:12px;object-fit:cover;display:block;}
+    figcaption{font-size:.9rem;color:var(--muted);margin-top:.5rem;text-align:center;}
+    .meta{flex:1;}
+    h1{margin:.125rem 0 .25rem 0;font-size:1.5rem;}
+    p.lead{margin:.25rem 0;color:var(--muted);}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:1rem;margin-top:1rem;}
+    section.card{background:var(--card);padding:1rem;border-radius:10px;}
+    ul.skills{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:.5rem;}
+    ul.skills li{background:#eef6ff;padding:.35rem .6rem;border-radius:999px;font-size:.85rem;color:var(--accent);}
+    .contact a{display:inline-block;margin-right:.5rem;color:var(--accent);text-decoration:none;}
+    footer{margin-top:1rem;text-align:center;color:var(--muted);font-size:.9rem;}
+    @media (max-width:760px){.grid{grid-template-columns:1fr;}.profile{flex-direction:row;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <strong>Portfolio — Frontend Developer</strong>
+    </div>
+  </header>
+
+  <main class="container" role="main">
+    <article class="profile" aria-labelledby="name">
+      <figure>
+        <img src="https://via.placeholder.com/300" alt="Harshit Singh">
+        <figcaption>Harshit singh — Frontend & UI Developer</figcaption>
+      </figure>
+
+      <div class="meta">
+        <h1 id="name">Harshit Singh</h1>
+        <p class="lead">I build accessible, responsive user interfaces and small UI-driven tools. Currently focused on modern JavaScript and Web Performance.</p>
+
+        <p><strong>Education:</strong> B.Tech in Computer Science — GLA University (2024)</p>
+
+        <div style="margin-top:.5rem;">
+          <strong>Skills</strong>
+          <ul class="skills" aria-label="skills">
+            <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>python</li><li>C</li><li>Git</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <div class="grid" style="margin-top:1rem;">
+      <section class="card" aria-labelledby="about">
+        <h2 id="about">About Me</h2>
+        <p>I enjoy turning complex problems into simple, beautiful interfaces. I care deeply about performance, accessibility, and maintainable code. Outside of coding, I climb and experiment with digital art.</p>
+
+        <h3>Selected Projects</h3>
+        <ul>
+          <li><strong>ShopClone</strong> — an accessible e-commerce UI built with React & Tailwind.</li>
+          <li><strong>StudyBuddy</strong> — a lightweight note-taking PWA with offline sync.</li>
+        </ul>
+      </section>
+
+      <aside class="card" aria-labelledby="contact">
+        <h2 id="contact">Contact</h2>
+        <p class="contact">
+          <a href="harshitsinghgla2415@gmail.com">harshitsinghgla2415@gmail.com</a><br>
+          <a href="https://github.com/harshitboat" target="_blank" rel="noopener">https://github.com/harshitboat</a><br>
+          <a href="https://www.linkedin.com/in/harshit-singh-86977a366/" target="_blank" rel="noopener">https://www.linkedin.com/in/harshit-singh-86977a366/</a>
+        </p>
+
+        <h3>Availability</h3>
+        <p>Open to junior/mid front-end roles and freelance projects.</p>
+      </aside>
+    </div>
+
+    <footer>
+      <p>Harshit singh — Built with semantic HTML</p>
+    </footer>
+  </main>
+</body>
+</html>
