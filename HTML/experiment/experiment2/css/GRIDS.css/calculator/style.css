@@ -1,4 +1,4 @@
-<style>
+
   :root{
     --bg:#66f14a; --panel:#0b1220; --accent:#10b981; --muted:#94a3b8;
     --btn:#1f2937; --btn-op:#ef4444; --gap:10px;
@@ -11,7 +11,7 @@
 
   .calculator{
     width: min(480px, 96vw);
-    background: linear-gradient(180deg,#07172a,#091827);
+    background: linear-gradient(180deg,#000000,#020b14);
     padding:18px;
     border-radius:14px;
     box-shadow: 0 10px 30px rgba(2,6,23,.6);
@@ -57,4 +57,3 @@
 
   /* small visual tweaks for clarity */
   .btn.clear { background: #334155; color: #f8fafc; font-weight:600; }
-</style>
