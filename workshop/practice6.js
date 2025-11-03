@@ -7,3 +7,10 @@ const [first,seond,fourth,fifth]=[
 "grapes",
 ];
 console.log(fifth,fourth);
+
+//spread
+const fruits = ["apple" , "banana","cherry"];
+const morefruits= ["mango" , "grapes","orange"];
+const combinedFruits = [...fruits,...morefruits]
+console.log(combinedFruits);
+
