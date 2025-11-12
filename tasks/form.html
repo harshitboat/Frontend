@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Form</title>
+  <link rel="stylesheet" href="form.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Company Information Form</h1>
+
+    <form id="companyForm" class="card" autocomplete="off">
+      <div class="form-group">
+        <label for="companyName">Company Name</label>
+        <input type="text" id="companyName" placeholder="Enter company name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="companyMotto">Company Motto</label>
+        <input type="text" id="companyMotto" placeholder="Enter company motto" required />
+      </div>
+
+      <div class="form-group">
+        <label for="companyImage">Upload Company Logo</label>
+        <input type="file" id="companyImage" accept="image/*" required />
+      </div>
+
+      <button type="submit" class="btn">Save Company Info</button>
+    </form>
+
+    <div id="output" class="output hidden">
+      <div class="result-card">
+        <div class="result-logo" id="resultLogo"></div>
+        <div class="result-info">
+          <h2 id="resultName"></h2>
+          <p id="resultMotto"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="form.js"></script>
+</body>
+</html>
