@@ -1,4 +1,4 @@
-/* Root theme variables */
+
 :root {
   --bg: #0e0e12;
   --card-bg: #1b1b22;
@@ -90,7 +90,7 @@ input[type="file"]:focus {
   border: none;
   border-radius: 10px;
   background: var(--accent);
-  color: white;
+  color: rgb(3, 102, 28);
   font-weight: 600;
   cursor: pointer;
   font-size: 1rem;

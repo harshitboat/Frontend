@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dynamic To‑Do List</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    ul { padding: 0; }
+    li {
+      list-style: none;
+      margin: 10px 0;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 6px;
+      transition: opacity 0.3s;
+    }
+    .high { background: #ffb3b3; }
+    .medium { background: #ffe6b3; }
+    .low { background: #b3ffb3; }
+    .completed { text-decoration: line-through; opacity: 0.4; }
+    button { margin-left: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Dynamic To‑Do List</h2>
+
+  <input id="taskInput" type="text" placeholder="Enter task" />
+  <select id="prioritySelect">
+    <option value="high">High</option>
+    <option value="medium">Medium</option>
+    <option value="low">Low</option>
+  </select>
+  <button id="addBtn">Add Task</button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    const taskInput = document.getElementById('taskInput');
+    const prioritySelect = document.getElementById('prioritySelect');
+    const addBtn = document.getElementById('addBtn');
+    const taskList = document.getElementById('taskList');
+
+    // Load saved tasks
+    let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+    tasks.forEach(t => addTaskToDOM(t));
+
+    addBtn.addEventListener('click', () => {
+      const text = taskInput.value.trim();
+      const priority = prioritySelect.value;
+      if (!text) return;
+
+      const task = { id: Date.now(), text, priority, completed: false };
+      tasks.push(task);
+      save();
+      addTaskToDOM(task);
+
+      taskInput.value = '';
+    });
+
+    function addTaskToDOM(task) {
+      const li = document.createElement('li');
+      li.className = task.priority;
+
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.checked = task.completed;
+
+      const span = document.createElement('span');
+      span.textContent = task.text;
+
+      if (task.completed) li.classList.add('completed');
+
+      checkbox.addEventListener('change', () => {
+        task.completed = checkbox.checked;
+        li.classList.toggle('completed');
+        save();
+      });
+
+      const delBtn = document.createElement('button');
+      delBtn.textContent = 'Delete';
+      delBtn.addEventListener('click', () => {
+        tasks = tasks.filter(t => t.id !== task.id);
+        save();
+        li.remove();
+      });
+
+      li.appendChild(checkbox);
+      li.appendChild(span);
+      li.appendChild(delBtn);
+      taskList.appendChild(li);
+    }
+
+    function save() {
+      localStorage.setItem('tasks', JSON.stringify(tasks));
+    }
+  </script>
+</body>
+</html>
